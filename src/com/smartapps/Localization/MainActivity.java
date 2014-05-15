@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -23,6 +24,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button btnStart, btnStop;
      private TextView txtviewwifi;
     private List<ScanResult> wifiList;
+    private ArrayList<RFData> fingerprintingData;
+
     IntentFilter intentFilter = new IntentFilter();
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
 
-
+        fingerprintingData  = new ArrayList<RFData>();
         intentFilter.addAction(WifiManager.RSSI_CHANGED_ACTION);
 
 
@@ -61,19 +64,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
         @Override
         public void onReceive(Context arg0, Intent arg1) {
             // TODO Auto-generated method stub
+            int rssi = 0;
+            String  ssid = "";
             StringBuilder sb = new StringBuilder();
             int newRssi = arg1.getIntExtra(WifiManager.EXTRA_NEW_RSSI, 0);
             WifiManager w = (WifiManager) arg0.getSystemService(Context.WIFI_SERVICE);
+            long timestamp = System.currentTimeMillis();
             wifiList = w.getScanResults(); // Returns a <list> of scanResults
             for(int i = 0; i < wifiList.size(); i++){
-                sb.append(new Integer(i+1).toString() + ".");
-                sb.append((wifiList.get(i)).toString());
+                sb.append(new Integer(fingerprintingData.size()).toString() + ".");
+                sb.append((wifiList.get(i).SSID));
+                sb.append((wifiList.get(i).level));
+                sb.append("\n");
+                ssid = wifiList.get(i).SSID;
+                rssi = wifiList.get(i).level;
 
-                sb.append("\\n");
+                RFData rfData = new RFData(timestamp,ssid,rssi);
+                fingerprintingData.add(rfData);
+
             }
-            txtviewwifi.setText(sb);
-
-            //txtview.setText(String.valueOf(newRssi));
+            StringBuilder lsttext =  new StringBuilder();
+            lsttext.append(txtviewwifi.getText() + "\n" + sb);
+            txtviewwifi.setText(lsttext);
 
         }};
 
