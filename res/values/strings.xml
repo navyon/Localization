@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Localization</string>
+    <string name="scan">Scan</string>
+    <string name="C1">Cell 1</string>
+    <string name="C2">Cell 2</string>
+    <string name="C3">Cell 3</string>
+    <string name="C4">Cell 4</string>
+    <string name="C5">Cell 5</string>
+    <string name="C6">Cell 6</string>
+    <string name="C7">Cell 7</string>
+    <string name="C8">Cell 8</string>
+    <string name="C9">Cell 9</string>
+    <string name="C10">Cell 10</string>
+    <string name="C11">Cell 11</string>
+    <string name="C12">Cell 12</string>
+    <string name="C13">Cell 13</string>
+    <string name="C14">Cell 14</string>
+    <string name="C15">Cell 15</string>
+    <string name="C16">Cell 16</string>
+    <string name="C17">Cell 17</string>
+    <string name="RSSV">RSS</string>
 </resources>

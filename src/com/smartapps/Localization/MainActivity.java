@@ -21,7 +21,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     /**
      * Called when the activity is first created.
      */
-    private Button btnStart, btnStop;
+    private Button btnCollect1;
      private TextView txtviewwifi;
     private List<ScanResult> wifiList;
     private ArrayList<RFData> fingerprintingData;
@@ -31,12 +31,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        btnStart = (Button) findViewById(R.id.btnscan);
-        btnStop = (Button) findViewById(R.id.btnstop);
-        txtviewwifi = (TextView) findViewById(R.id.txtviewwifi);
+        btnCollect1 = (Button) findViewById(R.id.btnScanC1);
+        //txtWifi = (TextView) findViewById(R.id.txtviewwifi);
 
-        btnStart.setOnClickListener(this);
-        btnStop.setOnClickListener(this);
+        btnCollect1.setOnClickListener(this);
 
         fingerprintingData  = new ArrayList<RFData>();
         intentFilter.addAction(WifiManager.RSSI_CHANGED_ACTION);
@@ -47,13 +45,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnscan:
+            case R.id.btnScanC1:
                 registerReceiver(myRssiChangeReceiver , intentFilter);
 
                 break;
-            case R.id.btnstop:
-                unregisterReceiver(myRssiChangeReceiver);
-                break;
+            //case R.id.btnstop:
+            //    unregisterReceiver(myRssiChangeReceiver);
+            //    break;
 
         }
     }
@@ -80,6 +78,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 rssi = wifiList.get(i).level;
 
                 RFData rfData = new RFData(timestamp,ssid,rssi);
+                fingerprintingData.add(rfData);
                 fingerprintingData.add(rfData);
 
             }
