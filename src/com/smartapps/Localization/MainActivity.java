@@ -14,6 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,28 +25,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
     /**
      * Called when the activity is first created.
      */
+    private int time = 20;
+    private Timer t;
+    private TimerTask task;
+
     private Button btnCollect1,btnCollect2,btnCollect3,btnCollect4,btnCollect5,btnCollect6,btnCollect7,btnCollect8,btnCollect9,btnCollect10,btnCollect11,btnCollect12,btnCollect13,btnCollect14,btnCollect15,btnCollect16,btnCollect17;
     private boolean btn1Used, btn2Used, btn3Used, btn4Used, btn5Used, btn6Used, btn7Used, btn8Used, btn9Used, btn10Used, btn11Used,btn12Used, btn13Used, btn14Used, btn15Used, btn16Used, btn17Used;
     private TextView txtviewwifi;
     private List<ScanResult> wifiList;
-    private ArrayList<RFData> dataC1;
-    private ArrayList<RFData> dataC2;
-    private ArrayList<RFData> dataC3;
-    private ArrayList<RFData> dataC4;
-    private ArrayList<RFData> dataC5;
-    private ArrayList<RFData> dataC6;
-    private ArrayList<RFData> dataC7;
-    private ArrayList<RFData> dataC8;
-    private ArrayList<RFData> dataC9;
-    private ArrayList<RFData> dataC10;
-    private ArrayList<RFData> dataC11;
-    private ArrayList<RFData> dataC12;
-    private ArrayList<RFData> dataC13;
-    private ArrayList<RFData> dataC14;
-    private ArrayList<RFData> dataC15;
-    private ArrayList<RFData> dataC16;
-    private ArrayList<RFData> dataC17;
-    private ArrayList<RFData> fingerprintingData;
+    private ArrayList<RFData> dataC1, dataC2, dataC3, dataC4, dataC5, dataC6, dataC7, dataC8, dataC9, dataC10, dataC11, dataC12, dataC13, dataC14,dataC15, dataC16, dataC17, fingerprintingData;
+
+    private enum ButtonClicked{
+        btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17
+    };
+    private ButtonClicked btnClickedIs;
 
     IntentFilter intentFilter = new IntentFilter();
     @Override
@@ -115,87 +111,117 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btnScanC1:
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
-                //this.dataC1 = new ArrayList<RFData>(this.fingerprintingData);
-                //this.fingerprintingData = new ArrayList<RFData>();
+                btnClickedIs = ButtonClicked.btn1;
+                startTimer();
                 break;
             case R.id.btnScanC2:
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver , intentFilter);
-
+                btnClickedIs = ButtonClicked.btn2;
+                startTimer();
                 break;
             case R.id.btnScanC3:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
-
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn3;
+                startTimer();
                 break;
             case R.id.btnScanC4:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn4;
+                startTimer();
 
                 break;
             case R.id.btnScanC5:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn5;
+                startTimer();
 
                 break;
             case R.id.btnScanC6:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn6;
+                startTimer();
 
                 break;
             case R.id.btnScanC7:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn7;
 
+                startTimer();
                 break;
             case R.id.btnScanC8:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn8;
+                startTimer();
 
                 break;
             case R.id.btnScanC9:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn9;
+                startTimer();
 
                 break;
             case R.id.btnScanC10:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn10;
+                startTimer();
 
                 break;
             case R.id.btnScanC11:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn11;
+                startTimer();
 
                 break;
             case R.id.btnScanC12:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn12;
+                startTimer();
 
                 break;
             case R.id.btnScanC13:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn13;
+                startTimer();
 
                 break;
             case R.id.btnScanC14:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn14;
+                startTimer();
 
                 break;
             case R.id.btnScanC15:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn15;
+                startTimer();
 
                 break;
             case R.id.btnScanC16:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn16;
+                startTimer();
 
                 break;
             case R.id.btnScanC17:
                 this.disableButtons();
-                registerReceiver(myRssiChangeReceiver , intentFilter);
+                registerReceiver(myRssiChangeReceiver, intentFilter);
+                btnClickedIs = ButtonClicked.btn17;
+                startTimer();
 
                 break;
             default:
@@ -206,6 +232,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }
     }
+
+
+    /***************************************************************************************
+     ********************************* Broadcast Receiver **********************************
+     ***************************************************************************************/
 
     private BroadcastReceiver myRssiChangeReceiver
             = new BroadcastReceiver(){
@@ -237,6 +268,126 @@ public class MainActivity extends Activity implements View.OnClickListener {
             txtviewwifi.setText(lsttext);
 
         }};
+
+
+    /***************************************************************************************
+     *************************************** Timer  ****************************************
+     ***************************************************************************************/
+    public void startTimer(){
+        time = 0;
+        t = new Timer();
+        task = new TimerTask() {
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    //Called each time when 1000 milliseconds (1 second) (the period parameter)
+                    @Override
+                    public void run() {
+                        TextView tv = (TextView) findViewById(R.id.timer);
+
+                        time += 1;
+
+                        int seconds = time % 60;
+                        int minutes = time / 60;
+                        String stringTime = String.format("%02d:%02d", minutes, seconds);
+                        tv.setText(stringTime);
+
+                        if(minutes > 0){
+                            stopTime();
+                        }
+                    }
+                });
+            }
+        };
+        t.scheduleAtFixedRate(task, 0, 1000);
+        //Second param. - Set how long before to start calling the TimerTask (in milliseconds)
+        //Third param. - Set the amount of time between each execution (in milliseconds)
+    }
+
+
+    private void stopTime(){
+        activateButtons();
+        switch (this.btnClickedIs){
+            case btn1:
+                this.dataC1 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn2:
+                this.dataC2 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn3:
+                this.dataC3 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn4:
+                this.dataC4 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn5:
+                this.dataC5 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn6:
+                this.dataC6 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn7:
+                this.dataC7 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn8:
+                this.dataC8 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn9:
+                this.dataC9 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn10:
+                this.dataC10 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn11:
+                this.dataC11 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn12:
+                this.dataC12 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn13:
+                this.dataC13 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn14:
+                this.dataC14 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn15:
+                this.dataC15 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn16:
+                this.dataC16 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+            case btn17:
+                this.dataC17 = new ArrayList<RFData>(this.fingerprintingData);
+                this.fingerprintingData = new ArrayList<RFData>();
+                break;
+        }
+        task.cancel();
+    }
+
+
+
+
+    /***************************************************************************************
+     ************************* Buttons - Enable and Disable options*************************
+     ***************************************************************************************/
 
     private void disableButtons(){
         this.btnCollect1.setEnabled(false);
