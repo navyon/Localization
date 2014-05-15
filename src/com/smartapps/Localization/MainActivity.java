@@ -21,7 +21,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     /**
      * Called when the activity is first created.
      */
-    private Button btnCollect1;
+    private Button btnCollect1,btnCollect2,btnCollect3,btnCollect4,btnCollect5,btnCollect6,btnCollect7,btnCollect8,btnCollect9,btnCollect10,btnCollect11,btnCollect12,btnCollect13,btnCollect14,btnCollect15,btnCollect16,btnCollect17;
      private TextView txtviewwifi;
     private List<ScanResult> wifiList;
     private ArrayList<RFData> fingerprintingData;
@@ -32,10 +32,41 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         btnCollect1 = (Button) findViewById(R.id.btnScanC1);
+        btnCollect2 = (Button) findViewById(R.id.btnScanC2);
+        btnCollect3 = (Button) findViewById(R.id.btnScanC3);
+        btnCollect4 = (Button) findViewById(R.id.btnScanC4);
+        btnCollect5 = (Button) findViewById(R.id.btnScanC5);
+        btnCollect6 = (Button) findViewById(R.id.btnScanC6);
+        btnCollect7 = (Button) findViewById(R.id.btnScanC7);
+        btnCollect8 = (Button) findViewById(R.id.btnScanC8);
+        btnCollect9 = (Button) findViewById(R.id.btnScanC9);
+        btnCollect10 = (Button) findViewById(R.id.btnScanC10);
+        btnCollect11 = (Button) findViewById(R.id.btnScanC11);
+        btnCollect12 = (Button) findViewById(R.id.btnScanC12);
+        btnCollect13 = (Button) findViewById(R.id.btnScanC13);
+        btnCollect14 = (Button) findViewById(R.id.btnScanC14);
+        btnCollect15 = (Button) findViewById(R.id.btnScanC15);
+        btnCollect16 = (Button) findViewById(R.id.btnScanC16);
+        btnCollect17 = (Button) findViewById(R.id.btnScanC17);
         //txtWifi = (TextView) findViewById(R.id.txtviewwifi);
 
         btnCollect1.setOnClickListener(this);
-
+        btnCollect2.setOnClickListener(this);
+        btnCollect3.setOnClickListener(this);
+        btnCollect4.setOnClickListener(this);
+        btnCollect5.setOnClickListener(this);
+        btnCollect6.setOnClickListener(this);
+        btnCollect7.setOnClickListener(this);
+        btnCollect8.setOnClickListener(this);
+        btnCollect9.setOnClickListener(this);
+        btnCollect10.setOnClickListener(this);
+        btnCollect11.setOnClickListener(this);
+        btnCollect12.setOnClickListener(this);
+        btnCollect13.setOnClickListener(this);
+        btnCollect14.setOnClickListener(this);
+        btnCollect15.setOnClickListener(this);
+        btnCollect16.setOnClickListener(this);
+        btnCollect17.setOnClickListener(this);
         fingerprintingData  = new ArrayList<RFData>();
         intentFilter.addAction(WifiManager.RSSI_CHANGED_ACTION);
 
