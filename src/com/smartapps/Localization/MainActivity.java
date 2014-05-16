@@ -246,7 +246,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             int rssi;
             String  ssid;
-            StringBuilder sb = new StringBuilder();
+            //StringBuilder sb = new StringBuilder();
             //int newRssi = arg1.getIntExtra(WifiManager.EXTRA_NEW_RSSI, 0);
             WifiManager w = (WifiManager) arg0.getSystemService(Context.WIFI_SERVICE);
             long timestamp = System.currentTimeMillis();
@@ -263,9 +263,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 fingerprintingData.add(rfData);
 
             }
-            StringBuilder lsttext =  new StringBuilder();
+            /*StringBuilder lsttext =  new StringBuilder();
             lsttext.append(txtviewwifi.getText()).append("\n").append(sb);
-            txtviewwifi.setText(lsttext);
+            txtviewwifi.setText(lsttext); */
 
         }};
 
@@ -294,7 +294,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         String stringTime = String.format("%02d:%02d", minutes, seconds);
                         tv.setText(stringTime);
 
-                        if(minutes > 0){
+                        if(seconds > 3){
                             stopTime();
                         }
                     }
