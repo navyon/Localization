@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -259,13 +261,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 ssid = aWifiList.SSID;
                 rssi = aWifiList.level;
 
-                RFData rfData = new RFData(timestamp, ssid, rssi);
+                RFData rfData = new RFData(ssid, rssi);
                 fingerprintingData.add(rfData);
 
             }
-            /*StringBuilder lsttext =  new StringBuilder();
+           /* StringBuilder lsttext =  new StringBuilder();
             lsttext.append(txtviewwifi.getText()).append("\n").append(sb);
-            txtviewwifi.setText(lsttext); */
+            txtviewwifi.setText(lsttext);*/
 
         }};
 
@@ -294,7 +296,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         String stringTime = String.format("%02d:%02d", minutes, seconds);
                         tv.setText(stringTime);
 
-                        if(seconds > 3){
+                        if(minutes > 0){
                             stopTime();
                         }
                     }
@@ -447,5 +449,49 @@ public class MainActivity extends Activity implements View.OnClickListener {
         this.btn15Used = false;
         this.btn16Used = false;
         this.btn17Used = false;
+    }
+    void saveData()
+    {
+        String filename = "rfdata.txt";
+        FileOutputStream outputStream;
+
+        ArrayList<ArrayList<RFData>> tempArrayList = new ArrayList<ArrayList<RFData>>();
+        tempArrayList.add(1,dataC1);
+        tempArrayList.add(2,dataC2);
+        tempArrayList.add(3,dataC3);
+        tempArrayList.add(4,dataC4);
+        tempArrayList.add(5,dataC5);
+        tempArrayList.add(6,dataC6);
+        tempArrayList.add(7,dataC7);
+        tempArrayList.add(8,dataC8);
+        tempArrayList.add(9,dataC9);
+        tempArrayList.add(10,dataC10);
+        tempArrayList.add(11,dataC11);
+        tempArrayList.add(12,dataC12);
+        tempArrayList.add(13,dataC13);
+        tempArrayList.add(14,dataC14);
+        tempArrayList.add(15,dataC15);
+        tempArrayList.add(16,dataC16);
+        tempArrayList.add(17,dataC17);
+
+
+        try {
+
+            FileOutputStream outStream = new FileOutputStream("/rfdata.txt");
+            ObjectOutputStream objectOutStream = new ObjectOutputStream(outStream);
+            objectOutStream.writeInt(tempArrayList.size()); // Save size first
+
+            for(int i=0; i<tempArrayList.size(); i++)
+            {
+                ArrayList<RFData> rfDataList = tempArrayList.get(i);
+                for(int j=0; j<rfDataList.size(); j++)
+                {
+                    objectOutStream.writeObject(rfDataList.get(i));
+                }
+            }
+            objectOutStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

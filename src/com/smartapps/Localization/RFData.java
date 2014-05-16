@@ -6,32 +6,27 @@ package com.smartapps.Localization;
 public class RFData {
 
 
-    private long timestamp;
+
     private String ssid;
     private int rssi;
-    //private Point3d point3d;
 
 
-    public RFData(long timestamp, String ssid, int rssi) {
-        this.timestamp = timestamp;
-        //this.point3d = point3d;
+
+    public RFData(String ssid, int rssi) {
+
+
         this.ssid = ssid;
         this.rssi = rssi;
 
 
     }
 
-    public long getTimestamp() {
-        return timestamp;
-    }
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
+
 
 
     public String toString()
     {
-        return "t="+timestamp + " RSSI =" + this.rssi +" SSID ="+this.ssid;
+        return " RSSI =" + this.rssi +" SSID ="+this.ssid;
     }
 
 }
