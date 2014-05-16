@@ -10,13 +10,14 @@ import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -31,7 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Timer t;
     private TimerTask task;
 
-    private Button btnCollect1,btnCollect2,btnCollect3,btnCollect4,btnCollect5,btnCollect6,btnCollect7,btnCollect8,btnCollect9,btnCollect10,btnCollect11,btnCollect12,btnCollect13,btnCollect14,btnCollect15,btnCollect16,btnCollect17;
+    private Button btnCollect1,btnCollect2,btnCollect3,btnCollect4,btnCollect5,btnCollect6,btnCollect7,btnCollect8,btnCollect9,btnCollect10,btnCollect11,btnCollect12,btnCollect13,btnCollect14,btnCollect15,btnCollect16,btnCollect17,btnSave;
     private boolean btn1Used, btn2Used, btn3Used, btn4Used, btn5Used, btn6Used, btn7Used, btn8Used, btn9Used, btn10Used, btn11Used,btn12Used, btn13Used, btn14Used, btn15Used, btn16Used, btn17Used;
     private TextView txtviewwifi;
     private List<ScanResult> wifiList;
@@ -64,6 +65,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnCollect15 = (Button) findViewById(R.id.btnScanC15);
         btnCollect16 = (Button) findViewById(R.id.btnScanC16);
         btnCollect17 = (Button) findViewById(R.id.btnScanC17);
+        btnSave =(Button) findViewById(R.id.btnSave);
         //txtWifi = (TextView) findViewById(R.id.txtviewwifi);
 
         btnCollect1.setOnClickListener(this);
@@ -83,6 +85,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnCollect15.setOnClickListener(this);
         btnCollect16.setOnClickListener(this);
         btnCollect17.setOnClickListener(this);
+        btnSave.setOnClickListener(this);
 
         dataC1  = new ArrayList<RFData>();
         dataC2  = new ArrayList<RFData>();
@@ -114,24 +117,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn1;
+                btn1Used = true;
                 startTimer();
                 break;
             case R.id.btnScanC2:
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver , intentFilter);
                 btnClickedIs = ButtonClicked.btn2;
+                btn2Used = true;
                 startTimer();
                 break;
             case R.id.btnScanC3:
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn3;
+                btn3Used = true;
                 startTimer();
                 break;
             case R.id.btnScanC4:
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn4;
+                btn4Used = true;
                 startTimer();
 
                 break;
@@ -139,6 +146,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn5;
+                btn5Used = true;
                 startTimer();
 
                 break;
@@ -146,6 +154,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn6;
+                btn6Used = true;
                 startTimer();
 
                 break;
@@ -153,6 +162,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn7;
+                btn7Used = true;
 
                 startTimer();
                 break;
@@ -160,6 +170,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn8;
+                btn8Used = true;
                 startTimer();
 
                 break;
@@ -167,6 +178,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn9;
+                btn9Used = true;
                 startTimer();
 
                 break;
@@ -174,6 +186,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn10;
+                btn10Used = true;
                 startTimer();
 
                 break;
@@ -181,6 +194,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn11;
+                btn11Used = true;
                 startTimer();
 
                 break;
@@ -188,6 +202,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn12;
+                btn12Used = true;
                 startTimer();
 
                 break;
@@ -195,6 +210,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn13;
+                btn13Used = true;
                 startTimer();
 
                 break;
@@ -202,6 +218,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn14;
+                btn14Used = true;
                 startTimer();
 
                 break;
@@ -209,6 +226,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn15;
+                btn15Used = true;
                 startTimer();
 
                 break;
@@ -216,6 +234,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn16;
+                btn16Used = true;
                 startTimer();
 
                 break;
@@ -223,14 +242,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.disableButtons();
                 registerReceiver(myRssiChangeReceiver, intentFilter);
                 btnClickedIs = ButtonClicked.btn17;
+                btn17Used = true;
                 startTimer();
 
                 break;
             default:
                 break;
-            //case R.id.btnstop:
-            //    unregisterReceiver(myRssiChangeReceiver);
-            //    break;
+            case R.id.btnSave:
+                saveData();
+               break;
 
         }
     }
@@ -251,7 +271,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //StringBuilder sb = new StringBuilder();
             //int newRssi = arg1.getIntExtra(WifiManager.EXTRA_NEW_RSSI, 0);
             WifiManager w = (WifiManager) arg0.getSystemService(Context.WIFI_SERVICE);
-            long timestamp = System.currentTimeMillis();
+
             wifiList = w.getScanResults(); // Returns a <list> of scanResults
             for (ScanResult aWifiList : wifiList) {
                 //sb.append(Integer.toString(fingerprintingData.size())).append(".");
@@ -296,7 +316,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         String stringTime = String.format("%02d:%02d", minutes, seconds);
                         tv.setText(stringTime);
 
-                        if(minutes > 0){
+                        if(minutes >= 2){
                             stopTime();
                         }
                     }
@@ -310,6 +330,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private void stopTime(){
+
+
+        System.out.println(fingerprintingData);
         activateButtons();
         switch (this.btnClickedIs){
             case btn1:
@@ -452,41 +475,60 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     void saveData()
     {
-        String filename = "rfdata.txt";
-        FileOutputStream outputStream;
 
         ArrayList<ArrayList<RFData>> tempArrayList = new ArrayList<ArrayList<RFData>>();
-        tempArrayList.add(1,dataC1);
-        tempArrayList.add(2,dataC2);
+        if(dataC1.size()>0)
+        tempArrayList.add(0,dataC1);
+        if(dataC2.size()>0)
+        tempArrayList.add(1,dataC2);
+        if(dataC3.size()>0)
         tempArrayList.add(3,dataC3);
+        if(dataC4.size()>0)
         tempArrayList.add(4,dataC4);
+        if(dataC5.size()>0)
         tempArrayList.add(5,dataC5);
+        if(dataC6.size()>0)
         tempArrayList.add(6,dataC6);
+        if(dataC7.size()>0)
         tempArrayList.add(7,dataC7);
+        if(dataC8.size()>0)
         tempArrayList.add(8,dataC8);
+        if(dataC9.size()>0)
         tempArrayList.add(9,dataC9);
+        if(dataC10.size()>0)
         tempArrayList.add(10,dataC10);
+        if(dataC11.size()>0)
         tempArrayList.add(11,dataC11);
+        if(dataC12.size()>0)
         tempArrayList.add(12,dataC12);
+        if(dataC13.size()>0)
         tempArrayList.add(13,dataC13);
+        if(dataC14.size()>0)
         tempArrayList.add(14,dataC14);
+        if(dataC15.size()>0)
         tempArrayList.add(15,dataC15);
+        if(dataC16.size()>0)
         tempArrayList.add(16,dataC16);
+        if(dataC17.size()>0)
         tempArrayList.add(17,dataC17);
 
 
         try {
 
-            FileOutputStream outStream = new FileOutputStream("/rfdata.txt");
+
+            String fullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+            FileOutputStream outStream = new FileOutputStream(fullPath +"/rfdata.txt");
             ObjectOutputStream objectOutStream = new ObjectOutputStream(outStream);
             objectOutStream.writeInt(tempArrayList.size()); // Save size first
 
+
             for(int i=0; i<tempArrayList.size(); i++)
             {
+                objectOutStream.writeBytes(" Cell NO" + (i));
                 ArrayList<RFData> rfDataList = tempArrayList.get(i);
                 for(int j=0; j<rfDataList.size(); j++)
                 {
-                    objectOutStream.writeObject(rfDataList.get(i));
+                    objectOutStream.writeBytes(rfDataList.get(i).toString() + "\n");
                 }
             }
             objectOutStream.close();
@@ -494,4 +536,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
             e.printStackTrace();
         }
     }
+
 }
