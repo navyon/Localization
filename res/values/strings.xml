@@ -2,24 +2,26 @@
 <resources>
     <string name="app_name">Localization</string>
     <string name="scan">Scan</string>
-    <string name="C1">Cell 1</string>
-    <string name="C2">Cell 2</string>
-    <string name="C3">Cell 3</string>
-    <string name="C4">Cell 4</string>
-    <string name="C5">Cell 5</string>
-    <string name="C6">Cell 6</string>
-    <string name="C7">Cell 7</string>
-    <string name="C8">Cell 8</string>
-    <string name="C9">Cell 9</string>
-    <string name="C10">Cell 10</string>
-    <string name="C11">Cell 11</string>
-    <string name="C12">Cell 12</string>
-    <string name="C13">Cell 13</string>
-    <string name="C14">Cell 14</string>
-    <string name="C15">Cell 15</string>
-    <string name="C16">Cell 16</string>
-    <string name="C17">Cell 17</string>
+    <string name="C1">Scan C1</string>
+    <string name="C2">Scan C2</string>
+    <string name="C3">Scan C3</string>
+    <string name="C4">Scan C4</string>
+    <string name="C5">Scan C5</string>
+    <string name="C6">Scan C6</string>
+    <string name="C7">Scan C7</string>
+    <string name="C8">Scan C8</string>
+    <string name="C9">Scan C9</string>
+    <string name="C10">Scan C10</string>
+    <string name="C11">Scan C11</string>
+    <string name="C12">Scan C12</string>
+    <string name="C13">Scan C13</string>
+    <string name="C14">Scan C14</string>
+    <string name="C15">Scan C15</string>
+    <string name="C16">Scan C16</string>
+    <string name="C17">Scan C17</string>
     <string name="RSSV">RSS</string>
     <string name="timer">00:00</string>
     <string name="timeTxt">Time: </string>
+
+    <color name="le_blue">#3250cd</color>
 </resources>

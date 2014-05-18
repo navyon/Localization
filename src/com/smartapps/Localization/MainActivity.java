@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnCollect16 = (Button) findViewById(R.id.btnScanC16);
         btnCollect17 = (Button) findViewById(R.id.btnScanC17);
         btnSave =(Button) findViewById(R.id.btnSave);
-        //txtWifi = (TextView) findViewById(R.id.txtviewwifi);
+        txtviewwifi = (TextView) findViewById(R.id.RSS_DATA);
 
         btnCollect1.setOnClickListener(this);
         btnCollect2.setOnClickListener(this);
@@ -268,16 +268,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             int rssi;
             String  ssid;
-            //StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             //int newRssi = arg1.getIntExtra(WifiManager.EXTRA_NEW_RSSI, 0);
             WifiManager w = (WifiManager) arg0.getSystemService(Context.WIFI_SERVICE);
 
             wifiList = w.getScanResults(); // Returns a <list> of scanResults
             for (ScanResult aWifiList : wifiList) {
-                //sb.append(Integer.toString(fingerprintingData.size())).append(".");
-                //sb.append(aWifiList.SSID);
-                //sb.append(aWifiList.level);
-                //sb.append("\n");
+                sb.append(Integer.toString(fingerprintingData.size())).append(".");
+                sb.append(aWifiList.SSID);
+                sb.append(aWifiList.level);
+                sb.append("\n");
                 ssid = aWifiList.SSID;
                 rssi = aWifiList.level;
 
@@ -285,9 +285,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 fingerprintingData.add(rfData);
 
             }
-           /* StringBuilder lsttext =  new StringBuilder();
+            StringBuilder lsttext =  new StringBuilder();
             lsttext.append(txtviewwifi.getText()).append("\n").append(sb);
-            txtviewwifi.setText(lsttext);*/
+            txtviewwifi.setText(lsttext);
 
         }};
 
@@ -477,40 +477,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
     {
 
         ArrayList<ArrayList<RFData>> tempArrayList = new ArrayList<ArrayList<RFData>>();
-        if(dataC1.size()>0)
         tempArrayList.add(0,dataC1);
-        if(dataC2.size()>0)
         tempArrayList.add(1,dataC2);
-        if(dataC3.size()>0)
-        tempArrayList.add(3,dataC3);
-        if(dataC4.size()>0)
-        tempArrayList.add(4,dataC4);
-        if(dataC5.size()>0)
-        tempArrayList.add(5,dataC5);
-        if(dataC6.size()>0)
-        tempArrayList.add(6,dataC6);
-        if(dataC7.size()>0)
-        tempArrayList.add(7,dataC7);
-        if(dataC8.size()>0)
-        tempArrayList.add(8,dataC8);
-        if(dataC9.size()>0)
-        tempArrayList.add(9,dataC9);
-        if(dataC10.size()>0)
-        tempArrayList.add(10,dataC10);
-        if(dataC11.size()>0)
-        tempArrayList.add(11,dataC11);
-        if(dataC12.size()>0)
-        tempArrayList.add(12,dataC12);
-        if(dataC13.size()>0)
-        tempArrayList.add(13,dataC13);
-        if(dataC14.size()>0)
-        tempArrayList.add(14,dataC14);
-        if(dataC15.size()>0)
-        tempArrayList.add(15,dataC15);
-        if(dataC16.size()>0)
-        tempArrayList.add(16,dataC16);
-        if(dataC17.size()>0)
-        tempArrayList.add(17,dataC17);
+        tempArrayList.add(2,dataC3);
+        tempArrayList.add(3,dataC4);
+        tempArrayList.add(4,dataC5);
+        tempArrayList.add(5,dataC6);
+        tempArrayList.add(6,dataC7);
+        tempArrayList.add(7,dataC8);
+        tempArrayList.add(8,dataC9);
+        tempArrayList.add(9,dataC10);
+        tempArrayList.add(10,dataC11);
+        tempArrayList.add(11,dataC12);
+        tempArrayList.add(12,dataC13);
+        tempArrayList.add(13,dataC14);
+        tempArrayList.add(14,dataC15);
+        tempArrayList.add(15,dataC16);
+        tempArrayList.add(16,dataC17);
 
 
         try {
@@ -524,11 +507,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             for(int i=0; i<tempArrayList.size(); i++)
             {
-                objectOutStream.writeBytes(" Cell NO" + (i));
+                objectOutStream.writeBytes(" Cell Nr " + (i) + "\n");
                 ArrayList<RFData> rfDataList = tempArrayList.get(i);
                 for(int j=0; j<rfDataList.size(); j++)
                 {
-                    objectOutStream.writeBytes(rfDataList.get(i).toString() + "\n");
+                    objectOutStream.writeBytes(rfDataList.get(j).toString() + "\n");
                 }
             }
             objectOutStream.close();

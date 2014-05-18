@@ -13,16 +13,9 @@ public class RFData {
 
 
     public RFData(String ssid, int rssi) {
-
-
         this.ssid = ssid;
         this.rssi = rssi;
-
-
     }
-
-
-
 
     public String toString()
     {

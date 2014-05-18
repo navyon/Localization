@@ -6,196 +6,144 @@
               android:background="#ffffff" android:weightSum="1">
 
     <!-- C1 -->
-    <TextView
-            android:id="@+id/txtCell"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C1"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/C1"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell"
             android:id="@+id/btnScanC1"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC1"
             android:layout_alignTop="@+id/txtCell"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC1"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
-
-    <!-- C10 -->
-    <TextView
-            android:id="@+id/txtCell10"
-            android:layout_toRightOf="@+id/txtResultC1"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C10"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell10"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell10"
-            android:id="@+id/btnScanC10"/>
+            android:layout_height="40dp"
+            android:text="@string/C2"
+            android:layout_marginLeft="20dp"
+            android:layout_alignBottom="@+id/btnScanC1"
+            android:layout_toRightOf="@+id/btnScanC1"
+            android:id="@+id/btnScanC2"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC10"
             android:layout_alignTop="@+id/txtCell11"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
-            android:layout_toRightOf="@+id/btnScanC10"
-            android:singleLine="true"/>
+            android:layout_toRightOf="@+id/btnScanC3"
+            android:singleLine="true"/>  -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C2 -->
-    <TextView
-            android:id="@+id/txtCell2"
-            android:layout_below="@+id/txtCell"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C2"
-            android:textSize="20sp"
-            android:singleLine="true"/>
+
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell2"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell2"
-            android:id="@+id/btnScanC2"/>
+            android:layout_height="40dp"
+            android:text="@string/C3"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnScanC2"
+            android:layout_alignBottom="@+id/btnScanC2"
+            android:id="@+id/btnScanC3"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC2"
             android:layout_alignTop="@+id/txtCell2"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC2"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C11 -->
-    <TextView
-            android:id="@+id/txtCell11"
-            android:layout_toRightOf="@+id/txtResultC2"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell10"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C11"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell11"
+            android:layout_height="40dp"
+            android:text="@string/C4"
+            android:layout_below="@id/btnScanC1"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell11"
-            android:id="@+id/btnScanC11"/>
+            android:id="@+id/btnScanC4"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC11"
             android:layout_alignTop="@+id/txtCell"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC11"
-            android:singleLine="true"/>
+            android:singleLine="true"/>  -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C3 -->
-    <TextView
-            android:id="@+id/txtCell3"
-            android:layout_below="@+id/txtCell2"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C3"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell3"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell3"
-            android:id="@+id/btnScanC3"/>
+            android:layout_height="40dp"
+            android:text="@string/C5"
+            android:layout_alignTop="@+id/btnScanC4"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnScanC4"
+            android:id="@+id/btnScanC5"/>
+
+    <!--
     <TextView
             android:id="@+id/txtResultC3"
             android:layout_alignTop="@+id/txtCell3"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC3"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C12 -->
-    <TextView
-            android:id="@+id/txtCell12"
-            android:layout_toRightOf="@+id/txtResultC3"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell11"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C12"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell12"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell12"
-            android:id="@+id/btnScanC12"/>
+            android:layout_height="40dp"
+            android:text="@string/C6"
+            android:layout_alignBottom="@+id/btnScanC4"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnScanC5"
+            android:id="@+id/btnScanC6"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC12"
             android:layout_alignTop="@+id/txtCell12"
@@ -203,8 +151,9 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/RSSV"
+            android:visibility="invisible"
             android:layout_toRightOf="@+id/btnScanC12"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
@@ -212,25 +161,14 @@
 
 
     <!-- C4 -->
-    <TextView
-            android:id="@+id/txtCell4"
-            android:layout_below="@+id/txtCell3"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C4"
-            android:textSize="20sp"
-            android:singleLine="true"/>
-
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell4"
+            android:layout_height="40dp"
+            android:text="@string/C7"
+            android:layout_below="@id/btnScanC4"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell4"
-            android:id="@+id/btnScanC4"/>
+            android:id="@+id/btnScanC7"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC4"
             android:layout_alignTop="@+id/txtCell4"
@@ -238,111 +176,84 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/RSSV"
+            android:visibility="invisible"
             android:layout_toRightOf="@+id/btnScanC4"
-            android:singleLine="true"/>
-
+            android:singleLine="true"/> -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C13 -->
-    <TextView
-            android:id="@+id/txtCell13"
-            android:layout_toRightOf="@+id/txtResultC4"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell12"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C13"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell13"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell13"
-            android:id="@+id/btnScanC13"/>
+            android:layout_height="40dp"
+            android:text="@string/C8"
+            android:layout_alignBottom="@+id/btnScanC7"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnScanC7"
+            android:id="@+id/btnScanC8"/>
+
+    <!--
     <TextView
             android:id="@+id/txtResultC13"
             android:layout_alignTop="@+id/txtCell13"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC13"
-            android:singleLine="true"/>
+            android:singleLine="true"/>  -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C5 -->
-    <TextView
-            android:id="@+id/txtCell5"
-            android:layout_below="@+id/txtCell4"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C5"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell5"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell5"
-            android:id="@+id/btnScanC5"/>
+            android:layout_height="40dp"
+            android:text="@string/C9"
+            android:layout_alignBottom="@+id/btnScanC8"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnScanC8"
+            android:id="@+id/btnScanC9"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC5"
             android:layout_alignTop="@+id/txtCell5"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC5"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- C14 -->
-    <TextView
-            android:id="@+id/txtCell14"
-            android:layout_toRightOf="@+id/txtResultC4"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell13"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C14"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell14"
+            android:layout_height="40dp"
+            android:text="@string/C10"
+            android:layout_below="@id/btnScanC7"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell14"
-            android:id="@+id/btnScanC14"/>
-    <TextView
+            android:id="@+id/btnScanC10"/>
+    <!-- <TextView
             android:id="@+id/txtResultC14"
             android:layout_alignTop="@+id/txtCell14"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC14"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
@@ -351,69 +262,52 @@
 
 
     <!-- C6 -->
-    <TextView
-            android:id="@+id/txtCell6"
-            android:layout_below="@+id/txtCell5"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C6"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell6"
+            android:layout_height="40dp"
+            android:text="@string/C11"
+            android:layout_alignBottom="@+id/btnScanC10"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell6"
-            android:id="@+id/btnScanC6"/>
+            android:layout_toRightOf="@+id/btnScanC10"
+            android:id="@+id/btnScanC11"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC6"
             android:layout_alignTop="@+id/txtCell6"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC6"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C15 -->
-    <TextView
-            android:id="@+id/txtCell15"
-            android:layout_toRightOf="@+id/txtResultC6"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell14"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C15"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell15"
+            android:layout_height="40dp"
+            android:text="@string/C12"
+            android:layout_alignBottom="@+id/btnScanC11"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell15"
-            android:id="@+id/btnScanC15"/>
+            android:layout_toRightOf="@+id/btnScanC11"
+            android:id="@+id/btnScanC12"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC15"
             android:layout_alignTop="@+id/txtCell15"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC15"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
@@ -421,69 +315,51 @@
 
 
     <!-- C7 -->
-    <TextView
-            android:id="@+id/txtCell7"
-            android:layout_below="@+id/txtCell6"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C7"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell7"
+            android:layout_height="40dp"
+            android:text="@string/C13"
+            android:layout_below="@id/btnScanC10"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell7"
-            android:id="@+id/btnScanC7"/>
+            android:id="@+id/btnScanC13"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC7"
             android:layout_alignTop="@+id/txtCell7"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC7"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C16 -->
-    <TextView
-            android:id="@+id/txtCell16"
-            android:layout_toRightOf="@+id/txtResultC7"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell15"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C16"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell16"
+            android:layout_height="40dp"
+            android:text="@string/C14"
+            android:layout_alignBottom="@+id/btnScanC13"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell16"
-            android:id="@+id/btnScanC16"/>
+            android:layout_toRightOf="@+id/btnScanC13"
+            android:id="@+id/btnScanC14"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC16"
             android:layout_alignTop="@+id/txtCell16"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC16"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
@@ -491,103 +367,76 @@
 
 
     <!-- C8 -->
-    <TextView
-            android:id="@+id/txtCell8"
-            android:layout_below="@+id/txtCell7"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C8"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell8"
+            android:layout_height="40dp"
+            android:text="@string/C15"
+            android:layout_alignBottom="@+id/btnScanC14"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell8"
-            android:id="@+id/btnScanC8"/>
+            android:layout_toRightOf="@+id/btnScanC14"
+            android:id="@+id/btnScanC15"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC8"
             android:layout_alignTop="@+id/txtCell8"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC8"
-            android:singleLine="true"/>
-
+            android:singleLine="true"/> -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C17 -->
-    <TextView
-            android:id="@+id/txtCell17"
-            android:layout_toRightOf="@+id/txtResultC8"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/txtCell16"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C17"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell17"
+            android:layout_height="40dp"
+            android:text="@string/C16"
+            android:layout_below="@id/btnScanC13"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell17"
-            android:id="@+id/btnScanC17"/>
+            android:id="@+id/btnScanC16"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC17"
             android:layout_alignTop="@+id/txtCell17"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC17"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
     <!-- ............................................................ -->
 
     <!-- C9 -->
-    <TextView
-            android:id="@+id/txtCell9"
-            android:layout_below="@+id/txtCell8"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/C9"
-            android:textSize="20sp"
-            android:singleLine="true"/>
 
     <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:layout_alignBottom="@+id/txtCell9"
+            android:layout_height="40dp"
+            android:text="@string/C17"
+            android:layout_alignBottom="@+id/btnScanC16"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtCell9"
-            android:id="@+id/btnScanC9"/>
+            android:layout_toRightOf="@+id/btnScanC16"
+            android:id="@+id/btnScanC17"/>
+    <!--
     <TextView
             android:id="@+id/txtResultC9"
             android:layout_alignTop="@+id/txtCell9"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"
             android:text="@string/RSSV"
             android:layout_toRightOf="@+id/btnScanC9"
-            android:singleLine="true"/>
+            android:singleLine="true"/> -->
 
     <!-- ............................................................ -->
     <!-- ............................................................ -->
@@ -616,12 +465,32 @@
             android:layout_alignParentRight="true"
             android:singleLine="true"/>
     <Button
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Save"
-            android:id="@+id/btnSave" android:layout_alignBottom="@+id/txtResultC9"
-            android:layout_alignRight="@+id/timer"/>
+            android:id="@+id/btnSave"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBottom="@id/btnScanC17"
+            android:layout_toRightOf="@id/btnScanC17"
+            android:layout_alignLeft="@+id/timeText"/>
+
+    <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_below="@id/btnScanC16"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="fill_parent"
+            android:layout_toLeftOf="@id/timeText"
+            android:layout_height="400dp"
+            android:scrollbars="vertical"
+            android:fillViewport="true">
+    <TextView
+            android:id="@+id/RSS_DATA"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:textSize="20sp"/>
+    </ScrollView>
 
 
 </RelativeLayout>
