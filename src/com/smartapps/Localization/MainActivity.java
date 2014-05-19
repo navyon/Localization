@@ -267,7 +267,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         public void onReceive(Context arg0, Intent arg1) {
 
             int rssi;
-            String  ssid;
+            String  bssid;
             StringBuilder sb = new StringBuilder();
             //int newRssi = arg1.getIntExtra(WifiManager.EXTRA_NEW_RSSI, 0);
             WifiManager w = (WifiManager) arg0.getSystemService(Context.WIFI_SERVICE);
@@ -275,13 +275,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             wifiList = w.getScanResults(); // Returns a <list> of scanResults
             for (ScanResult aWifiList : wifiList) {
                 sb.append(Integer.toString(fingerprintingData.size())).append(".");
-                sb.append(aWifiList.SSID);
+                sb.append(aWifiList.BSSID);
                 sb.append(aWifiList.level);
                 sb.append("\n");
-                ssid = aWifiList.SSID;
+                bssid = aWifiList.BSSID;
                 rssi = aWifiList.level;
 
-                RFData rfData = new RFData(ssid, rssi);
+                RFData rfData = new RFData(bssid, rssi);
                 fingerprintingData.add(rfData);
 
             }
