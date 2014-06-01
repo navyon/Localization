@@ -13,7 +13,7 @@ import android.util.Log;
  */
 public class RssiDB extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1; //update when changing
+    private static final int DATABASE_VERSION = 3; //update when changing
 
     public static final String COLUMN_ID="_id";
     private static final String DATABASE_NAME = "rssivalues.db";
@@ -444,6 +444,7 @@ public class RssiDB extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_C16_TEST);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_C17_TEST);
 
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_MAC_VALUES);
 
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_C1_TRAINING);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_C2_TRAINING);
@@ -475,17 +476,550 @@ public class RssiDB extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 
-        values.put(RssiDB.RSSI_VALUE, "14");
-        values.put(RssiDB.SSID_VALUE, "MAC1");
+        /*
+                -40	 1c:aa:07:7b:28:06
+                -67	 1c:aa:07:7b:37:d6
+                -42	 1c:aa:07:7b:28:04
+                -79	 00:1b:90:76:ce:14
+                -79	 00:1b:90:76:ce:14
+                -79	 00:1b:90:76:ce:14
+                */
+        values.put(RssiDB.RSSI_VALUE, "-67");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TRAINING, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-42");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TRAINING, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-83");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TRAINING, null, values);
+        values = new ContentValues();
+
+
+
+        /******************************************************************************/
+        /*****************************   MAC IDs   ************************************/
+        /******************************************************************************/
+
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        //values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d4");
+        //db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        //values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        //values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d0");
+        //db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        //values = new ContentValues();
+
+        //values.put(RssiDB.SSID_VALUE, "00:1b:90:76:ce:16");
+        //db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        //values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:ce:14");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        //values.put(RssiDB.SSID_VALUE, "00:1b:90:76:ce:13");
+        //db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        //values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:03");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:26:5a:a9:99:46");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:25:9c:ca:87:ee");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:d3:f6");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:d3:f0");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:d3:f4");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:22:f7:20:a1:98");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "20:c9:d0:18:43:f3");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "5c:96:9d:65:76:8d");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:d3:f3");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:ce:10");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "5c:d9:98:e3:e6:c4");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:6e:31:a6");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:39:16");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:06");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:39:10");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:39:13");
+        db.insert(RssiDB.TABLE_MAC_VALUES, null, values);
+        values = new ContentValues();
+
+
+
+        /******************************************************************************/
+        /******************************************************************************/
+        /*****************************    CELL 1   ************************************/
+        /******************************************************************************/
+        /******************************************************************************/
+        /* 00:0e:a6:27:4d:fb */
+        values.put(RssiDB.RSSI_VALUE, "-89");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-88");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "9");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-83");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "9");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-91");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-49");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-41");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "10");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-40");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "7");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-45");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
         values.put(RssiDB.QUANTITY, "2");
         db.insert(RssiDB.TABLE_C1_TEST, null, values);
 
         values = new ContentValues();
 
-        values.put(RssiDB.RSSI_VALUE, "15");
-        values.put(RssiDB.SSID_VALUE, "MAC1");
-        values.put(RssiDB.QUANTITY, "4");
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-49");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "3");
         db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-41");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "9");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-46");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-76");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-68");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "9");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-67");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "7");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-74");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-59");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-50");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:046");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-42");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:046");
+        values.put(RssiDB.QUANTITY, "17");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-79");
+        values.put(RssiDB.SSID_VALUE, "00:1b:90:76:ce:14");
+        values.put(RssiDB.QUANTITY, "9");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+        /******************************************************************************/
+
+
+        values.put(RssiDB.RSSI_VALUE, "-45");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:03");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C1_TEST, null, values);
+
+        values = new ContentValues();
+
+
+        /******************************************************************************/
+        /******************************************************************************/
+        /*******************************   CELL 2  ************************************/
+        /******************************************************************************/
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-97");
+        values.put(RssiDB.SSID_VALUE, "00:26:5a:a9:99:46");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-41");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "4");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-44");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-42");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-37");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-43");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-39");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:06");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-70");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-69");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-72");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+
+        values.put(RssiDB.RSSI_VALUE, "-76");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-65");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-68");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:37:d6");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+
+        values.put(RssiDB.RSSI_VALUE, "-89");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-91");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-92");
+        values.put(RssiDB.SSID_VALUE, "00:0e:a6:27:4d:fb");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-41");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-39");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-44");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-45");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-35");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-40");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:00");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-44");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "3");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+        values.put(RssiDB.RSSI_VALUE, "-43");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+        values.put(RssiDB.RSSI_VALUE, "-38");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+        values.put(RssiDB.RSSI_VALUE, "-42");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-40");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:04");
+        values.put(RssiDB.QUANTITY, "1");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        /******************************************************************************/
+
+        values.put(RssiDB.RSSI_VALUE, "-43");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:03");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+        values.put(RssiDB.RSSI_VALUE, "-47");
+        values.put(RssiDB.SSID_VALUE, "1c:aa:07:7b:28:03");
+        values.put(RssiDB.QUANTITY, "2");
+        db.insert(RssiDB.TABLE_C2_TEST, null, values);
+
+        values = new ContentValues();
+
+
+        /******************************************************************************/
+        /******************************************************************************/
+        /*******************************   CELL 3  ************************************/
+        /******************************************************************************/
+        /******************************************************************************/
+
+
+        /**
+
+
+         */
+
+        /**
+
+
+         */
+
+        /**
+
+
+         */
+
+
+
 
 
 

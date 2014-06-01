@@ -170,6 +170,7 @@ public class RssiDataSource {
             if(tempD.size() > 0) data.put(ssid, tempD);
             cursor.moveToNext();
         }
+        close();
         return new DataCell(data);
     }
 
@@ -193,7 +194,6 @@ public class RssiDataSource {
             result.add(tempD);
             cursor.moveToNext();
         }
-        cursor.close();
 
         return result;
     }

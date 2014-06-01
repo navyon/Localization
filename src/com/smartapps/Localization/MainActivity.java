@@ -11,6 +11,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Timer t;
     private TimerTask task;
 
+    private RssiDataSource datasource;
+    private DataCell cell1;
+    private DataCell cell2;
+    private DataCell letest;
+
+
+
+
     private Button btnCollect1,btnCollect2,btnCollect3,btnCollect4,btnCollect5,btnCollect6,btnCollect7,btnCollect8,btnCollect9,btnCollect10,btnCollect11,btnCollect12,btnCollect13,btnCollect14,btnCollect15,btnCollect16,btnCollect17,btnSave;
     private boolean btn1Used, btn2Used, btn3Used, btn4Used, btn5Used, btn6Used, btn7Used, btn8Used, btn9Used, btn10Used, btn11Used,btn12Used, btn13Used, btn14Used, btn15Used, btn16Used, btn17Used;
     private TextView txtviewwifi;
@@ -48,6 +57,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        this.datasource = new RssiDataSource(this);
+        this.datasource.open();
+        this.cell1 = datasource.getTestDataC1();
+        System.out.println(cell1);
+        this.cell2 = datasource.getTestDataC2();
+        System.out.println(cell2);
+        letest = datasource.getTrainingDataC1();
+        this.datasource.close();
+
         btnCollect1 = (Button) findViewById(R.id.btnScanC1);
         btnCollect2 = (Button) findViewById(R.id.btnScanC2);
         btnCollect3 = (Button) findViewById(R.id.btnScanC3);
